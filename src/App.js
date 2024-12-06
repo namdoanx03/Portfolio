@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -17,6 +18,7 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Cert from "./components/Certificates/Certs";
+import ContactUs from "./components/Contact/ContactUs";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -41,6 +43,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/certificates" element={<Cert />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />

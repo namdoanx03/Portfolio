@@ -104,9 +104,9 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
+                to="/contact"
+                as={Link}
+                onClick={() => updateExpanded(false)}
               >
                 <AiOutlineMessage style={{ marginBottom: "2px" }} /> Contact
               </Nav.Link>
