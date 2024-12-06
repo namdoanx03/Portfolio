@@ -293,7 +293,12 @@ button:focus {
   font-size: 2.4em !important;
   color: #b562d6 !important;
 }
-
+.Typewriter__string {
+  color: #b562d6 !important;
+  font-size: 25px !important;
+  font-weight: 600 !important;
+  font-family: 'Courier New' !important;
+}
 @media (max-width: 767px) {
   .Typewriter__wrapper {
     font-size: 1.4em !important;
@@ -557,11 +562,11 @@ button:focus {
   border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
   vertical-align: middle !important;
   text-align: center !important;
-  border-radius: 5px !important;
+  border-radius: 10px !important;
   display: table !important;
   box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
   overflow: hidden !important;
-  transition: all 0.4s ease 0s !important;
+  transition: all 0.5s ease 0s !important;
 }
 
 @media (max-width: 767px) {
@@ -739,4 +744,29 @@ button:focus {
 }
 .fork-btn-inner::after {
   display: none !important;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  
+  40% {
+    transform: translateY(-20px);
+  }
+  
+  60% {
+    transform: translateY(-10px);
+  }
+}
+.scroll-icon {
+  animation: bounce 2s infinite;
+}
+.hide-scroll-icon {
+  display: none;
+}
+.custom-input {
+    background: white;
+    border-radius: 20px;
+    padding: auto;    
 }

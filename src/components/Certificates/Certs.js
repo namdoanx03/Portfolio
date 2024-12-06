@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import CertCards from "./CertCards";
 import UXDesign from '../../Assets/Certs/uxdesign.jpeg'
 import ProjectManage from "../../Assets/Certs/prjmanage.jpeg";
-function Cert() {
+import { AiFillDownCircle } from "react-icons/ai";
+
+
+const Cert = () => {
+  const [showScrollIcon, setShowScrollIcon] = useState(true);
+  const handleScroll = () => {
+    const scrolled = window.scrollY;
+    if (scrolled > 200) {
+      setShowScrollIcon(false);
+    } else {
+      setShowScrollIcon(true);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    // Clean up event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Container fluid className="project-section">
+    <Container fluid className="project-section" id="certificates">
       <Particle />
       <Container>
         <h1 className="project-heading">
@@ -56,6 +76,13 @@ function Cert() {
               description="I became the media ambassador of hackathon JuntionXHanoi 2023. I participated in posting content and communication for the event."
             />
           </Col>
+          <Row
+            className={`scroll-icon ${
+              showScrollIcon ? "" : "hide-scroll-icon"
+            }`}
+          >
+            <AiFillDownCircle size={35} color="purple" />
+          </Row>
         </Row>
       </Container>
     </Container>

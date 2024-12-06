@@ -3,24 +3,25 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
 import {
   AiOutlineMessage,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineProject,
+  AiFillMessage,
 } from "react-icons/ai";
 import { TbCertificate } from "react-icons/tb";
 import { CgFileDocument } from "react-icons/cg";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
-function NavBar() {
+
+const NavBar = () => {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
-  function scrollHandler() {
+  const scrollHandler = () => {
     if (window.scrollY >= 20) {
       updateNavbar(true);
     } else {
@@ -37,7 +38,7 @@ function NavBar() {
       expand="md"
       className={navColour ? "sticky" : "navbar"}
     >
-      <Container>
+      <Container style={{ paddingTop: "10px" }}>
         <Navbar.Brand href="/" className="d-flex">
           <img src={logo} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
@@ -54,62 +55,96 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <ScrollLink
+                activeClass="active"
+                style={{ color: "white", paddingTop: "100px" }}
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={80}
+                duration={500}
+                onClick={() => updateExpanded(false)}
+              >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
+              </ScrollLink>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
+              <ScrollLink
+                style={{ color: "white", paddingTop: "100px" }}
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={80}
+                duration={500}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
+              </ScrollLink>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
+              <ScrollLink
+                style={{ color: "white", paddingTop: "100px" }}
+                activeClass="active"
+                to="projects"
+                spy={true}
+                smooth={true}
+                offset={80}
+                duration={500}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projects
-              </Nav.Link>
+              </ScrollLink>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
+              <ScrollLink
+                style={{ color: "white", paddingTop: "100px" }}
+                activeClass="active"
+                to="certificates"
+                spy={true}
+                smooth={true}
+                offset={80}
+                duration={500}
                 onClick={() => updateExpanded(false)}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
+              </ScrollLink>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                to="/certificates"
-                as={Link}
+              <ScrollLink
+                style={{ color: "white", paddingTop: "100px" }}
+                activeClass="active"
+                to="resume"
+                spy={true}
+                smooth={true}
+                offset={30}
+                duration={500}
                 onClick={() => updateExpanded(false)}
               >
                 <TbCertificate style={{ marginBottom: "2px" }} /> Certificates
-              </Nav.Link>
+              </ScrollLink>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                to="/contact"
-                as={Link}
+              <ScrollLink
+                style={{ color: "white", paddingTop: "100px" }}
+                activeClass="active"
+                to="contactme"
+                spy={true}
+                smooth={true}
+                offset={80}
+                duration={500}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineMessage style={{ marginBottom: "2px" }} /> Contact
-              </Nav.Link>
+              </ScrollLink>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

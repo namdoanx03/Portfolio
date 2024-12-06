@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { contactConfig } from '../../content-options' 
 import { IoSend } from "react-icons/io5";
@@ -9,10 +9,15 @@ import {
   AiFillInstagram,
   AiFillMail,
 } from "react-icons/ai";
-import { TiSocialFlickrCircular } from "react-icons/ti";
-
+import Typewriter from "typewriter-effect";
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+        user_name: '',
+        user_email: '',
+        message: ''
+    });
+
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -26,6 +31,11 @@ const ContactUs = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setFormData({
+            user_name: "",
+            user_email: "",
+            message: "",
+          });
         },
         (error) => {
           console.log(error.text);
@@ -34,25 +44,35 @@ const ContactUs = () => {
   };
   const handleChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
+      const { name, value } = e.target;
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
   };
   return (
-    <Container style={{ color: "white" }}>
-      <Row className="mb-5 mt-3">
+    <Container style={{ color: "white" }} id="contactme">
+      <Row className="mb-5 mt-5">
         <Col lg="8">
           <h1
-            className="display-4 mb-4"
+            className="display-4 mb-4 "
             style={{ paddingTop: "80px", color: "white" }}
           >
             Contact <strong className="purple">Me</strong>
+            <span class="wave">👋</span>
           </h1>
           <hr className="t_border my-4 ml-0 text-left" />
         </Col>
       </Row>
       <Row className="sec_sp" style={{ color: "white", borderRadius: "20px" }}>
         <Col lg="5" className="mb-5">
-          <h3 className="color_sec py-4">Get in touch</h3>
-          <address>
+          <h3
+            className="color_sec py-4"
+            style={{ fontSize: "35px", fontFamily: "courier" }}
+          >
+            Get in touch
+          </h3>
+          <address style={{ fontSize: "20px", fontFamily: "courier" }}>
             <strong>Email:</strong>{" "}
             <a href={`mailto:${contactConfig.YOUR_EMAIL}`} color="purple">
               {contactConfig.YOUR_EMAIL}
@@ -60,18 +80,30 @@ const ContactUs = () => {
             <br />
             <br />
             {contactConfig.hasOwnProperty("YOUR_FONE") ? (
-              <p>
+              <p style={{ fontFamily: "courier", fontSize: "20px" }}>
                 <strong>Phone:</strong> {contactConfig.YOUR_FONE}
               </p>
             ) : (
               ""
             )}
           </address>
-          <p>{contactConfig.description}</p>
+          <Typewriter
+            options={{
+              strings: ["Let's do something great together! 🏆"],
+              autoStart: true,
+              loop: true,
+              deleteSpeed: 50,
+              cursor: "_",
+              wrapperClassName: "Typewriter__string",
+              cursorClassName: "Typewriter__cursor_contact",
+              stringClassName: "Typewriter-string",
+            }}
+          />
+          <br />
           <ul className="home-about-social-links">
             <li className="social-icons">
               <a
-                href="https://github.com/The-White-Bear"
+                href="https://github.com/namdoanx03"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-colour  home-social-icons"
@@ -81,7 +113,7 @@ const ContactUs = () => {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.facebook.com/duythong27"
+                href="https://www.facebook.com/namdoanx03"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-colour  home-social-icons"
@@ -91,7 +123,7 @@ const ContactUs = () => {
             </li>
             <li className="social-icons">
               <a
-                href="mailto:duythong.ptit@gmail.com"
+                href="mailto:namdoan9a1.1718@gmail.com"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-colour  home-social-icons"
@@ -101,7 +133,7 @@ const ContactUs = () => {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/d_d_thong/"
+                href="https://www.instagram.com/namdoaxn/"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-colour home-social-icons"
@@ -126,9 +158,10 @@ const ContactUs = () => {
                   name="user_name"
                   placeholder="Name"
                   type="text"
-                  style={{ background: "white" }}
+                  style={{ background: "white", borderRadius: "20px" }}
                   required
                   onChange={handleChange}
+                  value={formData.user_name}
                 />
               </Col>
               <Col lg="6" className="form-group">
@@ -141,6 +174,7 @@ const ContactUs = () => {
                   style={{ background: "white", borderRadius: "20px" }}
                   required
                   onChange={handleChange}
+                  value={formData.user_email}
                 />
               </Col>
             </Row>
@@ -153,14 +187,15 @@ const ContactUs = () => {
               style={{ background: "white", borderRadius: "20px" }}
               required
               onChange={handleChange}
+              value={formData.message}
             ></textarea>
             <br />
             <Row>
               <Col lg="12" className="form-group">
                 <button
-                  className="btn ac_btn"
+                  className="btn ac_btn mt-2 mb-5"
                   type="submit"
-                  style={{ background: "white" , borderRadius: '20px'}}
+                  style={{ background: "white", borderRadius: "20px" }}
                 >
                   Send <IoSend style={{ marginRight: "5px" }} />
                 </button>

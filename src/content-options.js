@@ -56,7 +56,7 @@ const services = [
 ];
 const contactConfig = {
   YOUR_EMAIL: "namdoan9a1.1718@gmail.com",
-  YOUR_FONE: "+84 988 130 768",
+  YOUR_FONE: "0988130768",
   description: "Let's do something interesting together!",
   YOUR_SERVICE_ID: "service_id",
   YOUR_TEMPLATE_ID: "template_id",

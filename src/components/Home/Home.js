@@ -1,11 +1,36 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import { AiFillDownCircle } from "react-icons/ai";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
-function Home() {
+const Home = () => {
+  const [expand, updateExpanded] = useState(false);
+  const [navColour, updateNavbar] = useState(false);
+
+  const scrollHandler = () => {
+    if (window.scrollY >= 20) {
+      updateNavbar(true);
+    } else {
+      updateNavbar(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+    // Clean the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []); // Empty dependency array ensures that the effect runs only once during mount
+
+  const showScrollIcon = () => {
+    const scrolled = window.scrollY;
+    return scrolled <= 200;
+  }
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -38,6 +63,20 @@ function Home() {
                 style={{ maxHeight: "450px" }}
               />
             </Col>
+            <Row
+              className={`scroll-icon ${
+                showScrollIcon ? "" : "hide-scroll-icon"
+              }`}
+            >
+              <p> </p>
+            </Row>
+            <Row
+              className={`scroll-icon ${
+                showScrollIcon ? "" : "hide-scroll-icon"
+              }`}
+            >
+              <p> </p>
+            </Row>
           </Row>
         </Container>
       </Container>

@@ -8,15 +8,14 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Soumyajit Behera </span>
-            from <span className="purple"> Bhubaneswar, India.</span>
+            I'm currently living in Hanoi.
             <br />
-            I am currently employed as a software developer at Juspay.
-            <br />
-            I have completed Integrated MSc (IMSc) in Maths and Computing at BIT
-            Mesra.
-            <br />
-            <br />
+            Along with learning programming, I also participate in
+            extracurricular activities. I am the president of a club and
+            participate in many youth union activities. It helps me develop many
+            soft skills to complement my programming skills. Actually, I've only
+            been learning to code for about a year, so I don't have much
+            experience, but I'm trying every day to become a good programmer.
             Apart from coding, some other activities that I love to do!
           </p>
           <ul>
