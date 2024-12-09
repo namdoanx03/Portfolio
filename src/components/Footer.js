@@ -6,7 +6,7 @@ function Footer() {
   let year = date.getFullYear();
   return (
     <Container fluid className="footer">
-      <Row className="d-flex justify-content-center align-items-center w-100 mt-5">
+      <Row className="d-flex justify-content-center align-items-center mt-5">
         <Col xs="12" className="footer-copywright text-center">
           <h3>
             Copyright © {year} Namdoanx. Made with{" "}

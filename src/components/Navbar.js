@@ -12,8 +12,7 @@ import {
 } from "react-icons/ai";
 import { TbCertificate } from "react-icons/tb";
 import { CgFileDocument } from "react-icons/cg";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-
+import { Link as ScrollLink } from "react-scroll";
 
 const NavBar = () => {
   const [expand, updateExpanded] = useState(false);
@@ -25,7 +24,7 @@ const NavBar = () => {
     } else {
       updateNavbar(false);
     }
-  }
+  };
 
   window.addEventListener("scroll", scrollHandler);
 
@@ -57,14 +56,13 @@ const NavBar = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
+            <Nav.Item style={{ cursor: "pointer", color: "white" }}>
               <ScrollLink
                 activeClass="active"
-                style={{ color: "white", paddingTop: "100px" }}
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={80}
+                offset={-70}
                 duration={500}
                 onClick={() => updateExpanded(false)}
               >
@@ -72,14 +70,13 @@ const NavBar = () => {
               </ScrollLink>
             </Nav.Item>
 
-            <Nav.Item>
+            <Nav.Item style={{ cursor: "pointer", color: "white" }}>
               <ScrollLink
-                style={{ color: "white", paddingTop: "100px" }}
                 activeClass="active"
                 to="about"
                 spy={true}
                 smooth={true}
-                offset={110}
+                offset={-70}
                 duration={500}
                 onClick={() => updateExpanded(false)}
               >
@@ -87,14 +84,13 @@ const NavBar = () => {
               </ScrollLink>
             </Nav.Item>
 
-            <Nav.Item>
+            <Nav.Item style={{ cursor: "pointer", color: "white" }}>
               <ScrollLink
-                style={{ color: "white", paddingTop: "100px" }}
                 activeClass="active"
                 to="projects"
                 spy={true}
                 smooth={true}
-                offset={-30}
+                offset={-70}
                 duration={500}
                 onClick={() => updateExpanded(false)}
               >
@@ -105,29 +101,13 @@ const NavBar = () => {
               </ScrollLink>
             </Nav.Item>
 
-            <Nav.Item>
+            <Nav.Item style={{ cursor: "pointer", color: "white" }}>
               <ScrollLink
-                style={{ color: "white", paddingTop: "100px" }}
                 activeClass="active"
                 to="certificates"
                 spy={true}
                 smooth={true}
-                offset={-30}
-                duration={500}
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </ScrollLink>
-            </Nav.Item>
-
-            <Nav.Item>
-              <ScrollLink
-                style={{ color: "white", paddingTop: "100px" }}
-                activeClass="active"
-                to="resume"
-                spy={true}
-                smooth={true}
-                offset={40}
+                offset={-70}
                 duration={500}
                 onClick={() => updateExpanded(false)}
               >
@@ -135,14 +115,27 @@ const NavBar = () => {
               </ScrollLink>
             </Nav.Item>
 
-            <Nav.Item>
+            <Nav.Item style={{ cursor: "pointer", color: "white" }}>
               <ScrollLink
-                style={{ color: "white", paddingTop: "100px" }}
+                activeClass="active"
+                to="resume"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                onClick={() => updateExpanded(false)}
+              >
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+              </ScrollLink>
+            </Nav.Item>
+
+            <Nav.Item style={{ cursor: "pointer", color: "white" }}>
+              <ScrollLink
                 activeClass="active"
                 to="contactme"
                 spy={true}
                 smooth={true}
-                offset={130}
+                offset={-70}
                 duration={500}
                 onClick={() => updateExpanded(false)}
               >
@@ -154,6 +147,6 @@ const NavBar = () => {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavBar;

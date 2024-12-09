@@ -39,8 +39,8 @@ function App() {
         <Home />
         <About />
         <Projects />
-        <Resume />
         <Cert />
+        <Resume />
         <ContactUs />
         <Footer />
         <ScrollToTop />

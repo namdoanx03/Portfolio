@@ -81,7 +81,7 @@ button:focus {
 .navbar {
   position: fixed !important;
   transition: all 0.3s ease-out 0s !important;
-  padding: 0.3rem 2rem !important;
+  padding: 0.2rem 2rem !important;
   font-size: 1.2rem !important;
 }
 
@@ -106,6 +106,7 @@ button:focus {
 .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: 0 !important;
+  color: red
 }
 
 .navbar-toggler span:nth-child(1),
@@ -138,9 +139,10 @@ button:focus {
 
 @media (max-width: 767px) {
   .navbar {
-    padding: 1rem 2rem !important;
+    /* padding: 1rem 2rem !important; */
     font-size: 1.4rem !important;
     background-color: #181a27 !important;
+    
   }
 
   .navbar-nav .nav-item a::after {
@@ -153,8 +155,8 @@ button:focus {
 }
 
 .logo {
-  height: 1.4em !important;
-  width: 2.5em !important;
+  height: 2.4em !important;
+  width: 3.4em !important;
 }
 
 .navbar-nav .nav-link {
@@ -171,6 +173,7 @@ button:focus {
   .nav-link {
     padding: 0.7rem 1rem !important;
   }
+  
 }
 
 .navbar-nav .nav-item {
@@ -180,6 +183,7 @@ button:focus {
 
 .navbar-nav .nav-item a {
   font-weight: 400;
+  text-decoration: none;
   transition: all 0.3s ease-out 0s;
   position: relative;
   z-index: 1;
@@ -201,6 +205,11 @@ button:focus {
 
 .navbar-nav .nav-item a:hover::after {
   width: 100%;
+}
+
+.navbar-nav .nav-item a.active {
+  color: #c95bf5 !important; /* Màu khi active */
+  font-weight: bold; /* Làm chữ in đậm */
 }
 
 /* --------- */
@@ -427,7 +436,7 @@ button:focus {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: rgb(10, 4, 22);
+  /* background-color: rgb(10, 4, 22); */
   bottom: 0 !important;
   padding-top: 10px !important;
   padding-bottom: 8px !important;
@@ -453,7 +462,7 @@ button:focus {
 }
 
 .footer h3 {
-  font-size: 1em;
+  font-size: 1.1em;
   color: white !important;
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
@@ -678,6 +687,7 @@ button:focus {
 }
 
 @media (max-width: 767px) {
+
   .resume-left {
     padding-right: 15px !important;
     padding-left: 15px !important;

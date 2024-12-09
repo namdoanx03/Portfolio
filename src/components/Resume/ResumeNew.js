@@ -37,7 +37,7 @@ const  ResumeNew = () => {
             marginBottom: "50px",
           }}
         >
-          <Col md={7} style={{ textAlign: "center", paddingLeft: "50px" }}>
+          <Col md={7} style={{ textAlign: "center"}}>
             <p> Resume Preview </p>
             <img src={cv} alt="resume" style={{ maxWidth: "80%" }} />
           </Col>
@@ -45,7 +45,7 @@ const  ResumeNew = () => {
             md={5}
             style={{
               alignSelf: "center",
-              paddingRight: "50px",
+              margin: "10px 0",
               textAlign: "center",
             }}
           >
