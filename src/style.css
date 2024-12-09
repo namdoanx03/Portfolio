@@ -294,7 +294,7 @@ button:focus {
   color: #b562d6 !important;
 }
 .Typewriter__string {
-  color: #b562d6 !important;
+  color: #ffffff  !important;
   font-size: 25px !important;
   font-weight: 600 !important;
   font-family: 'Courier New' !important;
@@ -452,7 +452,7 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  /* background-image: var(--section-background-color) !important; */
 }
 
 .project-card {
@@ -550,7 +550,7 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  /* background-image: var(--section-background-color) !important; */
   color: white !important;
 }
 
@@ -610,7 +610,7 @@ button:focus {
   position: relative !important;
   padding-top: 110px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  /* background-image: var(--section-background-color) !important; */
   color: white !important;
 }
 

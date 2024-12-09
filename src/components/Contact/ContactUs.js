@@ -10,6 +10,7 @@ import {
   AiFillMail,
 } from "react-icons/ai";
 import Typewriter from "typewriter-effect";
+import { Alert } from 'react-bootstrap';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +20,9 @@ const ContactUs = () => {
     });
 
   const form = useRef();
+  const [alertMessage, setAlertMessage] = useState('');
+  const [alertVariant, setAlertVariant] = useState('success'); // or 'danger' for error
+
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -36,12 +40,20 @@ const ContactUs = () => {
             user_email: "",
             message: "",
           });
+          setAlertMessage("Email sent successfully!");
+          setAlertVariant("success");
         },
         (error) => {
           console.log(error.text);
+          setAlertMessage("Error sending email!");
         }
       );
   };
+
+  const handleAlertClose = () => {
+        setAlertMessage('');
+    };
+
   const handleChange = (e) => {
     e.preventDefault();
       const { name, value } = e.target;
@@ -158,7 +170,11 @@ const ContactUs = () => {
                   name="user_name"
                   placeholder="Name"
                   type="text"
-                  style={{ background: "white", borderRadius: "20px" }}
+                  style={{
+                    background: "white",
+                    borderRadius: "20px",
+                    color: "black",
+                  }}
                   required
                   onChange={handleChange}
                   value={formData.user_name}
@@ -171,7 +187,11 @@ const ContactUs = () => {
                   name="user_email"
                   placeholder="Email"
                   type="email"
-                  style={{ background: "white", borderRadius: "20px" }}
+                  style={{
+                    background: "white",
+                    borderRadius: "20px",
+                    color: "black",
+                  }}
                   required
                   onChange={handleChange}
                   value={formData.user_email}
@@ -184,7 +204,11 @@ const ContactUs = () => {
               name="message"
               placeholder="Message"
               rows="5"
-              style={{ background: "white", borderRadius: "20px" }}
+              style={{
+                background: "white",
+                borderRadius: "20px",
+                color: "black",
+              }}
               required
               onChange={handleChange}
               value={formData.message}
@@ -204,6 +228,19 @@ const ContactUs = () => {
           </form>
         </Col>
       </Row>
+      {alertMessage && (
+        <Row>
+          <Col lg="12">
+            <Alert
+              variant={alertVariant}
+              onClose={handleAlertClose}
+              dismissible
+            >
+              {alertMessage}
+            </Alert>
+          </Col>
+        </Row>
+      )}
     </Container>
   );
 }

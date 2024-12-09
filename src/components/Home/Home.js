@@ -6,6 +6,7 @@ import Home2 from "./Home2";
 import Type from "./Type";
 import { AiFillDownCircle } from "react-icons/ai";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { AiOutlineMessage } from "react-icons/ai";
 
 const Home = () => {
   const [expand, updateExpanded] = useState(false);
@@ -26,16 +27,14 @@ const Home = () => {
     };
   }, []); // Empty dependency array ensures that the effect runs only once during mount
 
-  const showScrollIcon = () => {
-    const scrolled = window.scrollY;
-    return scrolled <= 200;
-  }
-
   return (
-    <section>
-      <Container fluid className="home-section" id="home">
+    <section id="home">
+      <Container fluid className="home-section">
         <Particle />
-        <Container className="home-content">
+        <Container
+          className="home-content"
+          style={{ paddingTop: "-100px", marginTop: "-50px" }}
+        >
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
@@ -63,22 +62,26 @@ const Home = () => {
                 style={{ maxHeight: "450px" }}
               />
             </Col>
-            <Row
-              className={`scroll-icon ${
-                showScrollIcon ? "" : "hide-scroll-icon"
-              }`}
-            >
-              <p> </p>
-            </Row>
-            <Row
-              className={`scroll-icon ${
-                showScrollIcon ? "" : "hide-scroll-icon"
-              }`}
-            >
-              <p> </p>
-            </Row>
           </Row>
         </Container>
+        <Row className="scroll-icon">
+          <ScrollLink
+            style={{ color: "white", paddingTop: "80px" }}
+            activeClass="active"
+            to="contactme"
+            spy={true}
+            smooth={true}
+            offset={80}
+            duration={500}
+            onClick={() => updateExpanded(false)}
+          >
+            <AiFillDownCircle
+              style={{ color: "purple", marginTop: "40px" }}
+              size={35}
+              className="scroll-icon-icon" /* Assign a unique class for styling */
+            />
+          </ScrollLink>
+        </Row>
       </Container>
       <Home2 />
     </section>

@@ -12,7 +12,7 @@ import { FaTiktok } from "react-icons/fa";
 
 const Home2 = () => {
   return (
-    <Container fluid className="home-about-section" >
+    <Container fluid className="home-about-section" id="home">
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
@@ -70,17 +70,7 @@ const Home2 = () => {
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://twitter.com/Soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
+                  <AiFillGithub size={25} />
                 </a>
               </li>
               <li className="social-icons">
@@ -90,7 +80,7 @@ const Home2 = () => {
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
-                  <FaLinkedinIn />
+                  <FaLinkedinIn size={25} />
                 </a>
               </li>
               <li className="social-icons">
@@ -100,7 +90,7 @@ const Home2 = () => {
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
-                  <AiFillInstagram />
+                  <AiFillInstagram size={25} />
                 </a>
               </li>
               <li className="social-icons">
@@ -110,7 +100,7 @@ const Home2 = () => {
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
-                  <FaTiktok />
+                  <FaTiktok size={25} />
                 </a>
               </li>
             </ul>

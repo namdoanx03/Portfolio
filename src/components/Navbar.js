@@ -3,14 +3,12 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
-import { Link } from "react-router-dom";
 import {
   AiOutlineMessage,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
   AiOutlineProject,
-  AiFillMessage,
 } from "react-icons/ai";
 import { TbCertificate } from "react-icons/tb";
 import { CgFileDocument } from "react-icons/cg";
@@ -69,14 +67,14 @@ const NavBar = () => {
               </ScrollLink>
             </Nav.Item>
 
-            <Nav.Item>
+            <Nav.Item >
               <ScrollLink
                 style={{ color: "white", paddingTop: "100px" }}
                 activeClass="active"
                 to="about"
                 spy={true}
                 smooth={true}
-                offset={80}
+                offset={110}
                 duration={500}
                 onClick={() => updateExpanded(false)}
               >

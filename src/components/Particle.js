@@ -1,9 +1,9 @@
 import React from "react";
 import Particles from "react-tsparticles";
 
-function Particle() {
+const Particle = () => {
   return (
-    <Particles
+    <Particles className="particle-container"
       id="tsparticles"
       params={{
         particles: {
@@ -32,6 +32,9 @@ function Particle() {
               opacity_min: 0.05,
             },
           },
+          color:{
+            value:"#ffffff"
+          }
         },
         interactivity: {
           events: {
