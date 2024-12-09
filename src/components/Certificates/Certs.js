@@ -5,7 +5,7 @@ import CertCards from "./CertCards";
 import UXDesign from '../../Assets/Certs/uxdesign.jpeg'
 import ProjectManage from "../../Assets/Certs/prjmanage.jpeg";
 import { AiFillDownCircle } from "react-icons/ai";
-
+import DownButton from "../DownButton";
 
 const Cert = () => {
   const [showScrollIcon, setShowScrollIcon] = useState(true);
@@ -76,14 +76,8 @@ const Cert = () => {
               description="I became the media ambassador of hackathon JuntionXHanoi 2023. I participated in posting content and communication for the event."
             />
           </Col>
-          <Row
-            className={`scroll-icon ${
-              showScrollIcon ? "" : "hide-scroll-icon"
-            }`}
-          >
-            <AiFillDownCircle size={35} color="purple" />
-          </Row>
         </Row>
+        <DownButton scrollToElement="resume" offsetElement={-30} />
       </Container>
     </Container>
   );

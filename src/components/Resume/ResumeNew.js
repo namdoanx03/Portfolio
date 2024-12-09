@@ -6,6 +6,7 @@ import pdf from "../../Assets/../Assets/Soumyajit_Behera-BIT_MESRA.pdf";
 import { SiCodereview } from "react-icons/si";
 import cv from "../../Assets/cv.png";
 import { pdfjs } from "react-pdf";
+import DownButton from "../DownButton";
 import CVfind from '../../Assets/resume_detail.png'
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -22,22 +23,23 @@ const  ResumeNew = () => {
   return (
     <div>
       <Container fluid className="resume-section" id="resume">
-        <Particle />
         <Row>
           <p className="resume-title" style={{ fontSize: "2.5em" }}>
-            My <span className="purple"> Resume</span>
+            My <strong className="purple">Resume</strong>
           </p>
           <br />
         </Row>
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row
+          style={{
+            justifyContent: "center",
+            position: "relative",
+            marginBottom: "50px",
+          }}
+        >
           <Col md={7} style={{ textAlign: "center", paddingLeft: "50px" }}>
             <p> Resume Preview </p>
-            <img
-              src={cv}
-              alt="resume"
-              style={{ maxWidth: "100%", marginLeft: "50px" }}
-            />
+            <img src={cv} alt="resume" style={{ maxWidth: "80%" }} />
           </Col>
           <Col
             md={5}
@@ -50,7 +52,7 @@ const  ResumeNew = () => {
             <Row className="align-items-center justify-content-center">
               <img
                 src={CVfind}
-                style={{ maxWidth: "55%" }}
+                style={{ maxWidth: "65%" }}
                 alt="resume details"
               />
             </Row>
@@ -75,6 +77,7 @@ const  ResumeNew = () => {
             </Row>
           </Col>
         </Row>
+        <DownButton scrollToElement="contactme" offsetElement={130} />
       </Container>
     </div>
   );

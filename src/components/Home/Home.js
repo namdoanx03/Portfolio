@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import { AiFillDownCircle } from "react-icons/ai";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-import { AiOutlineMessage } from "react-icons/ai";
+import DownButton from "../DownButton";
+import gif from "../../Assets/giphy.gif";
 
 const Home = () => {
   const [expand, updateExpanded] = useState(false);
@@ -28,16 +26,22 @@ const Home = () => {
   }, []); // Empty dependency array ensures that the effect runs only once during mount
 
   return (
-    <section id="home">
-      <Container fluid className="home-section">
-        <Particle />
+    <Container fluid className="home-section" id="home">
+      <Container fluid>
         <Container
           className="home-content"
-          style={{ paddingTop: "-100px", marginTop: "-50px" }}
+          style={{
+            paddingTop: "-100px",
+            marginTop: "-50px",
+            marginBottom: "0px",
+          }}
         >
           <Row>
-            <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
+            <Col md={6} className="home-header">
+              <h1
+                style={{ paddingBottom: 15, fontSize: "2.5em" }}
+                className="heading"
+              >
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
@@ -53,38 +57,25 @@ const Home = () => {
                 <Type />
               </div>
             </Col>
-
-            <Col md={5} style={{ paddingBottom: 20 }}>
+            <Col md={6} style={{ paddingBottom: 20 }}>
               <img
-                src={homeLogo}
-                alt="home pic"
+                src={gif}
                 className="img-fluid"
-                style={{ maxHeight: "450px" }}
+                alt="home pic"
+                style={{ width: "90%", height: "90%" }}
               />
             </Col>
           </Row>
         </Container>
-        <Row className="scroll-icon">
-          <ScrollLink
-            style={{ color: "white", paddingTop: "80px" }}
-            activeClass="active"
-            to="contactme"
-            spy={true}
-            smooth={true}
-            offset={80}
-            duration={500}
-            onClick={() => updateExpanded(false)}
-          >
-            <AiFillDownCircle
-              style={{ color: "purple", marginTop: "40px" }}
-              size={35}
-              className="scroll-icon-icon" /* Assign a unique class for styling */
-            />
-          </ScrollLink>
-        </Row>
+        <DownButton
+          scrollToElement="home2"
+          offsetElement={20}
+          style={{ paddingTop: "30px" }}
+        />
       </Container>
       <Home2 />
-    </section>
+      <Particle />
+    </Container>
   );
 }
 

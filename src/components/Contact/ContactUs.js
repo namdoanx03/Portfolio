@@ -63,7 +63,7 @@ const ContactUs = () => {
       }));
   };
   return (
-    <Container style={{ color: "white" }} id="contactme">
+    <Container style={{ paddingTop: "0px", marginTop: "0px" }} id="contactme">
       <Row className="mb-5 mt-5">
         <Col lg="8">
           <h1

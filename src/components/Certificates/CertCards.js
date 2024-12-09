@@ -11,11 +11,6 @@ function CertCards(props) {
       />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
-        {"\n"}
-        {"\n"}
       </Card.Body>
     </Card>
   );

@@ -18,7 +18,7 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Cert from "./components/Certificates/Certs";
-import Particle from './components/Particle'
+
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -35,7 +35,6 @@ function App() {
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Particle/>
         <Navbar />
         <Home />
         <About />

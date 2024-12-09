@@ -9,6 +9,7 @@ import chatify from "../../Assets/Projects/chatify.png";
 import suicide from "../../Assets/Projects/suicide.png";
 import bitsOfCode from "../../Assets/Projects/blog.png";
 import { AiFillDownCircle } from "react-icons/ai";
+import DownButton from "../DownButton";
 
 const Projects = () => {
   const [showScrollIcon, setShowScrollIcon] = useState(true);
@@ -39,7 +40,14 @@ const Projects = () => {
         <p style={{ color: "white" }}>
           Here are a few projects I've worked on recently.
         </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        <Row
+          style={{
+            justifyContent: "center",
+            paddingBottom: "0px",
+            paddingTop: "0px",
+            marginTop: "0px",
+          }}
+        >
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={chatify}
@@ -107,11 +115,11 @@ const Projects = () => {
             />
           </Col>
         </Row>
-        <Row
-          className={`scroll-icon ${showScrollIcon ? "" : "hide-scroll-icon"}`}
-        >
-          <AiFillDownCircle size={35} color="purple" />
-        </Row>
+        <DownButton
+          scrollToElement="certificates"
+          offsetElement={-30}
+          style={{ paddingTop: "0px", marginTop: "0px" }}
+        />
       </Container>
     </Container>
   );
