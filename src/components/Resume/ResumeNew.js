@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import pdf from "../../Assets/../Assets/Soumyajit_Behera-BIT_MESRA.pdf";
+import pdf from "../../Assets/../Assets/Doan_Phuong_Nam.pdf";
 import { SiCodereview } from "react-icons/si";
 import cv from "../../Assets/cv.png";
 import { pdfjs } from "react-pdf";

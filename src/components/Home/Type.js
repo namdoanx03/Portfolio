@@ -9,6 +9,7 @@ function Type() {
           "Freelancer",
           "Front-end Developer",
           "Web Developer",
+          "Video Editor"
         ],
         autoStart: true,
         loop: true,
